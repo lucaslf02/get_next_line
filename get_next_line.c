@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 16:45:58 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:52:34 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,29 +100,29 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 int		get_next_line(int fd, char **line)
 {
-	ssize_t		r;
-	char		bf[BUFFER_SIZE + (r = 1)];
-	static char	*c_line = NULL;
-	char		*tmp;
+	ssize_t		qtd;
+	char		buff[BUFFER_SIZE + (qtd = 1)];
+	static char	*line_b = NULL;
+	char		*aux;
 
 	if (fd < 0 || !line || BUFFER_SIZE <= 0)
 		return (-1);
-	c_line == NULL ? c_line = ft_createstr(0) : NULL;
-	while (!ft_strchr(c_line, '\n') && (r = read(fd, bf, BUFFER_SIZE)) > 0)
+	line_b == NULL ? line_b = ft_createstr(0) : NULL;
+	while (!ft_strchr(line_b, '\n') && (qtd = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
-		bf[r] = '\0';
-		tmp = ft_strjoin(c_line, bf);
-		ft_memfdel((void **)&c_line);
-		c_line = tmp;
+		buff[qtd] = '\0';
+		aux = ft_strjoin(line_b, buff);
+		ft_memfdel((void **)&line_b);
+		line_b = aux;
 	}
-	if (r == 0)
-		*line = ft_strdup(c_line);
-	else if (r > 0)
-		*line = ft_substr(c_line, 0, (ft_strchr(c_line, '\n') - c_line));
+	if (qtd == 0)
+		*line = ft_strdup(line_b);
+	else if (qtd > 0)
+		*line = ft_substr(line_b, 0, (ft_strchr(line_b, '\n') - line_b));
 	else
 		return (-1);
-	tmp = ft_strdup(c_line + (ft_strlen(*line) + ((r > 0) ? +1 : +0)));
-	ft_memfdel((void **)&c_line);
-	c_line = tmp;
-	return (r == 0 ? 0 * ft_memfdel((void **)&c_line) : 1);
+	aux = ft_strdup(line_b + (ft_strlen(*line) + ((qtd > 0) ? +1 : +0)));
+	ft_memfdel((void**)&line_b);
+	line_b = aux;
+	return (qtd == 0 ? 0 * ft_memfdel((void**)&line_b) : 1);
 }
