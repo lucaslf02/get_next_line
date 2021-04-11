@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 15:35:44 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:30:36 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,16 @@
 
 char	*ft_strdup(const char *s)
 {
-	char	*s_aux;
-	int		len;
-	int		i;
+	char	*new;
+	ssize_t	i;
 
-	len = ft_strlen(s) + 1;
-	s_aux = (char *)malloc(len * sizeof(char));
-	if (!s_aux)
+	new = ft_strnew(ft_strlen(s));
+	if (new == NULL)
 		return (NULL);
-	i = 0;
-	while (s[i])
-	{
-		s_aux[i] = s[i];
-		i++;
-	}
-	s_aux[i] = '\0';
-	return (s_aux);
+	i = -1;
+	while (s[++i])
+		new[i] = s[i];
+	return (new);
 }
 
 char	*ft_strchr(const char *s, int c)
