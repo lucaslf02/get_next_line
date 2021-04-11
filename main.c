@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 19:17:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 15:29:17 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 15:47:45 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 #include <fcntl.h>
 #include <limits.h>
 
-int main ()
+int	main()
 {
-	int fd;
-	int ret;
-	char *line;
+	int		fd;
+	int		ret;
+	char	*line;
 
 	fd = open("/home/lucas/Desktop/42cursos/get_next_line/text.txt", O_RDONLY);
 	while ((ret = get_next_line(fd, &line)) > 0)
