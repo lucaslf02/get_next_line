@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:09 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 16:40:34 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:41:53 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t		ft_strlen(char const *s)
 	return (count);
 }
 
-char		*ft_createstr(size_t length)
+char		*ft_strnew(size_t length)
 {
 	return (ft_memalloc((length + 1) * sizeof(char)));
 }
@@ -58,7 +58,7 @@ void		*ft_memset(void *s, int c, size_t length)
 	return (s);
 }
 
-int			ft_memfdel(void **ptr)
+int			ft_memdel(void **ptr)
 {
 	if (*ptr)
 	{
