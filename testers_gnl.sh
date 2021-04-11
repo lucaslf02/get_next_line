@@ -1,25 +1,25 @@
 # CLONE YOUR PROJECT
 cd ~
-git clone https://github.com/lucaslf02/get_next_line.git teste
-cd teste
-mv libft/ ../
-cd ../libft
+git clone https://github.com/lucaslf02/get_next_line.git get_next_line
+cd get_next_line
 norminette *.c *.h
 
+
 # CLONE ALL GITHUB TESTERS
-cd ..
 git clone https://github.com/Mazoise/42TESTERS-GNL.git
+cd ..
+git clone https://github.com/mrjvs/42cursus_gnl_tests.git
 
-# RUN Libftest
-#cd Libftest
-#./grademe.sh
-#./grademe.sh
-#cd ..
+# RUN 42TESTERS-GNL
+cd get_next_line/GET42TESTERS-GNL
+bash all_test.sh
+cd ..
+cd ..
 
-# RUN libft-unit-test
-# cd libft-unit-test
-# make f
-# cd ..
+# RUN 42cursus_gnl_tests
+cd 42cursus_gnl_tests
+make 
+cd ..
 
 # RUN libft-war-machine
 #cd libft-war-machine
@@ -35,4 +35,4 @@ git clone https://github.com/Mazoise/42TESTERS-GNL.git
 # cd ..
 
 # CLEANUP
-rm -rf libft Libftest libft-unit-test libft-war-machine libftTester teste
+rm -rf get_next_line 42cursus_gnl_tests
