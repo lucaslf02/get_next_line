@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 16:30:36 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:33:50 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strdup(const char *s)
 	char	*new;
 	ssize_t	i;
 
-	new = ft_strnew(ft_strlen(s));
+	new = ft_createstr(ft_strlen(s));
 	if (new == NULL)
 		return (NULL);
 	i = -1;
