@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 16:36:26 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:38:12 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,24 +66,22 @@ char	*ft_strjoin(char const *s1, char const *s2)
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
-	size_t	s_len;
-	char	*substr;
+	char	*ptr;
 
-	if (!s)
-		return (NULL);
-	s_len = ft_strlen(s);
 	i = 0;
-	if (!(substr = (char*)malloc(sizeof(char) * (len + 1))))
+	if (!s || (long int)len < 0)
 		return (NULL);
-	if (start > s_len)
+	ptr = (char *)malloc(len + 1);
+	if (ptr == NULL)
+		return (NULL);
+	while (start < ft_strlen(s) && i < len)
 	{
-		substr[0] = '\0';
-		return (substr);
+		ptr[i] = s[start];
+		i++;
+		start++;
 	}
-	while (i < len && start < s_len)
-		substr[i++] = s[start++];
-	substr[len] = '\0';
-	return (substr);
+	ptr[i] = '\0';
+	return (ptr);
 }
 
 int		get_next_line(int fd, char **line)
