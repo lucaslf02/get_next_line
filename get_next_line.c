@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 16:35:18 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:36:26 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,28 @@ char	*ft_strchr(const char *s, int c)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*join;
-	char	*join_res;
+	char	*ptr;
+	int		i;
+	int		j;
 
-	if (!s1 || !s2)
+	i = 0;
+	j = 0;
+	if (s1 == NULL || s2 == NULL || !(ptr = (char *)malloc(ft_strlen(s1)
+		+ ft_strlen(s2) + 1)))
 		return (NULL);
-	join = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
-	if (!join)
-		return (NULL);
-	join_res = join;
-	while (*s1)
+	while (s1[i] != '\0')
 	{
-		*join = *s1;
-		join++;
-		s1++;
+		ptr[i] = s1[i];
+		i++;
 	}
-	while (*s2)
+	while (s2[j] != '\0')
 	{
-		*join = *s2;
-		join++;
-		s2++;
+		ptr[i] = s2[j];
+		i++;
+		j++;
 	}
-	*join = '\0';
-	return (join_res);
+	ptr[i] = '\0';
+	return (ptr);
 }
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
