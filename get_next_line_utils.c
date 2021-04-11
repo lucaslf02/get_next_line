@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:09 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 15:37:04 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:23:08 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ size_t		ft_strlen(char const *s)
 
 char		*ft_createstr(size_t length)
 {
-	return (ft_calloc((length + 1), sizeof(char)));
+	return (ft_memalloc((length + 1) * sizeof(char)));
 }
 
-void		*ft_calloc(size_t nmemb, size_t size)
+void		*ft_memalloc(size_t size)
 {
-	void *ptr;
+	void	*ptr;
 
-	if (!(ptr = malloc(size * nmemb)))
-		return (ptr);
-	ft_memset(ptr, 0, (size * nmemb));
+	ptr = malloc(size);
+	if (ptr == NULL)
+		return (NULL);
+	ft_memset(ptr, 0, size);
 	return (ptr);
 }
 

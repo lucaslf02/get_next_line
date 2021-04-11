@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:48 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 15:37:57 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:23:44 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 int		get_next_line(int fd, char **line);
 char	*ft_createstr(size_t length);
-void	*ft_calloc(size_t nmemb, size_t size);
+void	*ft_memalloc(size_t size);
 void	*ft_memset(void *s, int c, size_t length);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
