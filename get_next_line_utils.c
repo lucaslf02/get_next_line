@@ -6,59 +6,52 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:09 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 16:43:36 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/11 16:44:37 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "stdlib.h"
 #include "get_next_line.h"
 
-size_t		ft_strlen(char const *s)
+size_t	ft_strlen(char const *s)
 {
-	const	char	*ptr;
-	size_t			count;
+	size_t i;
 
-	count = 0;
-	ptr = s;
-	while (*ptr)
-	{
-		++ptr;
-		++count;
-	}
-	return (count);
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
 }
 
-char		*ft_strnew(size_t length)
+char		*ft_createstr(size_t length)
 {
-	return (ft_memalloc((length + 1) * sizeof(char)));
+	return (ft_calloc((length + 1), sizeof(char)));
 }
 
-void		*ft_memalloc(size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*ptr;
+	void *ptr;
 
-	ptr = malloc(size);
-	if (ptr == NULL)
-		return (NULL);
-	ft_memset(ptr, 0, size);
+	if (!(ptr = malloc(size * nmemb)))
+		return (ptr);
+	ft_memset(ptr, 0, (size * nmemb));
 	return (ptr);
 }
 
-void		*ft_memset(void *s, int c, size_t length)
+void	*ft_memset(void *s, int c, size_t length)
 {
-	unsigned	char	*ub;
+	int i;
 
-	ub = (unsigned char *)s;
-	while (length > 0)
+	i = 0;
+	while (i < (int)length)
 	{
-		*ub = c;
-		length--;
-		ub++;
+		((char*)s)[i] = c;
+		i++;
 	}
 	return (s);
 }
 
-int			ft_memdel(void **ptr)
+int			ft_memfdel(void **ptr)
 {
 	if (*ptr)
 	{
