@@ -20,19 +20,19 @@ cd ..
 
 # RUN 42TESTERS-GNL
 cd get_next_line/GET42TESTERS-GNL
-bash all_test.sh
-cd ..
-cd ..
+# bash all_test.sh
+# cd ..
+# cd ..
 
 # RUN 42cursus_gnl_tests
-cd 42cursus_gnl_tests
-make 
-cd ..
+# cd 42cursus_gnl_tests
+# make 
+# cd ..
 
 # RUN GNL_lover
-cd GNL_lover
-./GNL_lover.sh
-cd ..
+# cd GNL_lover
+# ./GNL_lover.sh
+# cd ..
 
 # RUN GET NEXT LINE TESTER
 #cd libftTester
@@ -41,9 +41,9 @@ cd ..
 # cd ..
 
 # RUN gnlTester
-cd get_next_line/gnlTester
-make m
+# cd get_next_line/gnlTester
+# make m
 # cd ..
 
 # CLEANUP
-rm -rf get_next_line 42cursus_gnl_tests
+# rm -rf get_next_line 42cursus_gnl_tests
