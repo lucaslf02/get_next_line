@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:09 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/11 17:08:08 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:24:55 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t	ft_valid_fd(int fd)
 	size_t	qtd;
 
 	qtd = 0;
-	qtd = read(fd, buff, BUFFER_SIZE);
+	qtd = read(fd, buff, 0);
 	return (qtd);
 }
 

@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 19:17:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/14 19:55:42 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:23:47 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main()
 	char	*line;
 
 	fd = open("/home/lucas/Desktop/42cursos/get_next_line/text.txt", O_RDONLY);
-	while ((ret = get_next_line(10000, &line)) > 0)
+	while ((ret = get_next_line(fd, &line)) > 0)
 	{
 		printf("[%d] %s\n", ret, line);
 		// free(line);

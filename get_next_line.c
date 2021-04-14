@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/13 20:52:02 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:49:56 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ int		get_next_line(int fd, char **line)
 	line_b == NULL ? line_b = ft_createstr(0) : NULL;
 	while (!ft_strchr(line_b, '\n') && (qtd = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
-		!(qtd > 0) ? return(-1) : buff[qtd] = '\0';
+		buff[qtd] = '\0';
 		aux = ft_strjoin(line_b, buff);
 		free(line_b);
 		line_b = aux;
@@ -120,7 +120,7 @@ int		get_next_line(int fd, char **line)
 	else if (qtd > 0)
 		*line = ft_substr(line_b, 0, (ft_strchr(line_b, '\n') - line_b));
 	else
-		return (-1);
+		return (-1 * ft_memfdel((void**)&line_b));
 	aux = ft_strdup(line_b + (ft_strlen(*line) + ((qtd > 0) ? +1 : +0)));
 	free(line_b);
 	line_b = aux;
