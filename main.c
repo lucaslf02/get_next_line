@@ -22,12 +22,12 @@ int	main()
 	char	*line;
 
 	fd = open("/home/lucas/Desktop/42cursos/get_next_line/text.txt", O_RDONLY);
-	while ((ret = get_next_line(fd, &line)) > 0)
+	while ((ret = get_next_line(10000, &line)) > 0)
 	{
 		printf("[%d] %s\n", ret, line);
-		free(line);
+		// free(line);
 		line = NULL;
 	}
 	printf("[%d] %s\n", ret, line);
-	free(line);
+	// free(line);
 }
