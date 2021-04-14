@@ -42,7 +42,7 @@ size_t	*ft_valid_fd(int fd, char *buff, int buffer_size)
 	ssize_t qtd;
 
 	qtd = 0;
-	qtd = read(fd, buff, buffer_size)) > 0);
+	qtd = read(fd, buff, buffer_size);
 	return (qtd);
 }
 
