@@ -110,7 +110,7 @@ int		get_next_line(int fd, char **line)
 	line_b == NULL ? line_b = ft_createstr(0) : NULL;
 	while (!ft_strchr(line_b, '\n') && (qtd = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
-		buff[qtd] = '\0';
+		!(qtd > 0) ? return(-1) : buff[qtd] = '\0';
 		aux = ft_strjoin(line_b, buff);
 		free(line_b);
 		line_b = aux;
