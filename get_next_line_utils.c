@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:09 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/14 20:55:21 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/14 20:57:26 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void		*ft_memset(void *s, int c, size_t length)
 
 int			ft_memfdel(void **ptr)
 {
-		ft_memset(*ptr, 0, ft_strlen(*ptr));
 		free(*ptr);
 		*ptr = NULL;
 		return (1);
