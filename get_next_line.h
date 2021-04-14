@@ -29,7 +29,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char const *s1, char const *s2);
 int		ft_memfdel(void **ptr);
 char	*ft_strdup(const char *s);
-char	*ft_strdup(const char *s);
+size_t	*ft_valid_fd(fd, buff, BUFFER_SIZE);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(char const *s);
 

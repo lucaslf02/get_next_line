@@ -25,17 +25,25 @@ size_t		ft_strlen(char const *s)
 
 char		*ft_createstr(size_t length)
 {
-	return (ft_calloc((length + 1), sizeof(char)));
-}
+	size_t	nmemb;
+	size_t	size;
+	void		*ptr;
 
-void		*ft_calloc(size_t nmemb, size_t size)
-{
-	void *ptr;
-
+	nmemb = length + 1;
+	size = sizeof(char);	
 	if (!(ptr = malloc(size * nmemb)))
 		return (ptr);
 	ft_memset(ptr, 0, (size * nmemb));
 	return (ptr);
+}
+
+size_t	*ft_valid_fd(fd, buff, BUFFER_SIZE)
+{
+	ssize_t qtd;
+
+	qtd = 0;
+	qtd = read(fd, buff, BUFFER_SIZE)) > 0);
+	return (qtd);
 }
 
 void		*ft_memset(void *s, int c, size_t length)
