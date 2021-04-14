@@ -105,7 +105,7 @@ int		get_next_line(int fd, char **line)
 	static char	*line_b = NULL;
 	char		*aux;
 
-	if (fd < 0 || !line || BUFFER_SIZE <= 0 || !(ft_valid_fd(fd, buff, BUFFER_SIZE) > 0))
+	if (fd < 0 || !line || BUFFER_SIZE <= 0 || !(ft_valid_fd(fd) > 0))
 		return (-1);
 	line_b == NULL ? line_b = ft_createstr(0) : NULL;
 	while (!ft_strchr(line_b, '\n') && (qtd = read(fd, buff, BUFFER_SIZE)) > 0)

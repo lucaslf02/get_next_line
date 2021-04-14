@@ -37,12 +37,13 @@ char		*ft_createstr(size_t length)
 	return (ptr);
 }
 
-size_t	ft_valid_fd(int fd, char *buff, int buffer_size)
+size_t	ft_valid_fd(int fd)
 {
-	size_t qtd;
+	char		buff[BUFFER_SIZE + 1];
+	size_t	qtd;
 
 	qtd = 0;
-	qtd = read(fd, buff, buffer_size);
+	qtd = read(fd, buff, BUFFER_SIZE);
 	return (qtd);
 }
 
