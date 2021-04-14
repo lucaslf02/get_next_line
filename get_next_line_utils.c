@@ -37,7 +37,7 @@ char		*ft_createstr(size_t length)
 	return (ptr);
 }
 
-size_t	*ft_valid_fd(int fd, char *buff, int buffer_size)
+size_t	ft_valid_fd(int fd, char *buff, int buffer_size)
 {
 	ssize_t qtd;
 
