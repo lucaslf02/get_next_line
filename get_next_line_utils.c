@@ -39,7 +39,7 @@ char		*ft_createstr(size_t length)
 
 size_t	ft_valid_fd(int fd, char *buff, int buffer_size)
 {
-	ssize_t qtd;
+	size_t qtd;
 
 	qtd = 0;
 	qtd = read(fd, buff, buffer_size);
