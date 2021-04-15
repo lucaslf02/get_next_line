@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:09 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/14 21:04:35 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/15 20:05:09 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int			ft_memfdel(void **ptr)
 	return (1);
 }
 
-void ft_dswap(char **a, char **b)
+void		ft_dswap(char **a, char **b)
 {
 	free(*a);
 	*a = *b;

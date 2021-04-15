@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:48 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/14 21:32:47 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/15 20:05:42 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 #  define BUFFER_SIZE 42
 # endif
 
-int			get_next_line(int fd, char **line);
-char		*ft_createstr(size_t length);
-void		*ft_memset(void *s, int c, size_t length);
-char		*ft_strchr(const char *s, int c);
-char		*ft_strjoin(char const *s1, char const *s2);
-int			ft_memfdel(void **ptr);
-char		*ft_strdup(const char *s);
-char		*ft_substr(char const *s, unsigned int start, size_t len);
+int		get_next_line(int fd, char **line);
+char	*ft_createstr(size_t length);
+void	*ft_memset(void *s, int c, size_t length);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_memfdel(void **ptr);
+char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(char const *s);
-void		ft_dswap(char **a, char **b);
+void	ft_dswap(char **a, char **b);
 
 #endif
