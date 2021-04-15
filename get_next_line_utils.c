@@ -60,5 +60,5 @@ int			ft_memfdel(void **ptr)
 void ft_dswap(char **a, char **b)
 {
 	free(*a)
-	*a = *b;
+	(char **)*a = *b;
 }
