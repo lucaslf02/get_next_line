@@ -56,3 +56,9 @@ int			ft_memfdel(void **ptr)
 	*ptr = NULL;
 	return (1);
 }
+
+void ft_dswap(char **a, char **b)
+{
+	free(*a);
+	*a = *b;
+}
