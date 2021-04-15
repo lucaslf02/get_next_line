@@ -105,7 +105,7 @@ int		get_next_line(int fd, char **line)
 	static char	*line_b = NULL;
 	char		*aux;
   
-	buff = malloc((BUFFER_SIZE + (qtd = 1)) + sizeof(char))
+	buff = malloc((BUFFER_SIZE + (qtd = 1)) + sizeof(char));
 	if (fd < 0 || !line || BUFFER_SIZE <= 0)
 		return (-1);
 	line_b == NULL ? line_b = ft_createstr(0) : NULL;
