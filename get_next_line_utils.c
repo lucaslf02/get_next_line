@@ -57,8 +57,8 @@ int			ft_memfdel(void **ptr)
 	return (1);
 }
 
-void ft_dswap(void **a, void **b)
+void ft_dswap(char **a, char **b)
 {
-	ft_memfdel((void**)&a);
+	free(*a)
 	*a = *b;
 }

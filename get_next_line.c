@@ -113,7 +113,7 @@ int		get_next_line(int fd, char **line)
 	{
 		buff[qtd] = '\0';
 		aux = ft_strjoin(line_b, buff);
-		line_b = aux;
+		ft_dswap(&line_b, &aux);
 	}
 	ft_memfdel((void**)&buff);
 	if (qtd == 0)
@@ -123,6 +123,6 @@ int		get_next_line(int fd, char **line)
 	else
 		return (-1 * ft_memfdel((void**)&line_b));
 	aux = ft_strdup(line_b + (ft_strlen(*line) + ((qtd > 0) ? +1 : +0)));
-	line_b = aux;
+	ft_dswap(&line_b, &aux);
 	return (qtd == 0 ? 0 * ft_memfdel((void**)&line_b) : 1);
 }

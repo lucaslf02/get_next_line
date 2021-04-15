@@ -30,6 +30,6 @@ int			ft_memfdel(void **ptr);
 char		*ft_strdup(const char *s);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(char const *s);
-void		ft_dswap(void **a, void **b);
+void		ft_dswap(char **a, char **b);
 
 #endif
