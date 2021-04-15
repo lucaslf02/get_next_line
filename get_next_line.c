@@ -107,7 +107,7 @@ int		get_next_line(int fd, char **line)
   
 	buff = malloc((BUFFER_SIZE + (qtd = 1)) + sizeof(char));
 	if (fd < 0 || !line || BUFFER_SIZE <= 0)
-		return (-1);
+		return (-1 * ft_memfdel((void**)&buff));
 	line_b == NULL ? line_b = ft_createstr(0) : NULL;
 	while (!ft_strchr(line_b, '\n') && (qtd = read(fd, buff, BUFFER_SIZE)) > 0)
 	{
@@ -116,6 +116,7 @@ int		get_next_line(int fd, char **line)
 		free(line_b);
 		line_b = aux;
 	}
+	ft_memfdel((void**)&buff);
 	if (qtd == 0)
 		*line = ft_strdup(line_b);
 	else if (qtd > 0)
