@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:09 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/14 20:57:26 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/14 21:04:35 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,14 @@ char		*ft_createstr(size_t length)
 {
 	size_t	nmemb;
 	size_t	size;
-	void		*ptr;
+	void	*ptr;
 
 	nmemb = length + 1;
-	size = sizeof(char);	
+	size = sizeof(char);
 	if (!(ptr = malloc(size * nmemb)))
 		return (ptr);
 	ft_memset(ptr, 0, (size * nmemb));
 	return (ptr);
-}
-
-size_t	ft_valid_fd(int fd)
-{
-	char		buff[BUFFER_SIZE + 1];
-	size_t	qtd;
-
-	qtd = 0;
-	qtd = read(fd, buff, 0);
-	return (qtd);
 }
 
 void		*ft_memset(void *s, int c, size_t length)
@@ -62,7 +52,7 @@ void		*ft_memset(void *s, int c, size_t length)
 
 int			ft_memfdel(void **ptr)
 {
-		free(*ptr);
-		*ptr = NULL;
-		return (1);
+	free(*ptr);
+	*ptr = NULL;
+	return (1);
 }
