@@ -6,7 +6,7 @@
 /*   By: llemes-f <llemes-f@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 20:01:26 by llemes-f          #+#    #+#             */
-/*   Updated: 2021/04/15 20:10:17 by llemes-f         ###   ########.fr       */
+/*   Updated: 2021/04/19 21:37:49 by llemes-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,7 @@ int		get_next_line(int fd, char **line)
 	static char	*line_b = NULL;
 	char		*aux;
 
-	if (!(buff = malloc((BUFFER_SIZE + 1) + sizeof(char))))
-		return (-1);
+	buff = malloc((BUFFER_SIZE + 1) + sizeof(char));
 	if (fd < 0 || !line || BUFFER_SIZE <= 0 || !((qtd = 1) > 0))
 		return (-1 * ft_memfdel((void**)&buff));
 	line_b == NULL ? line_b = ft_createstr(0) : NULL;
